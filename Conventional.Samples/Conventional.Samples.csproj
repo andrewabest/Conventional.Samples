@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MediatR, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MediatR.2.0.2\lib\net45\MediatR.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,13 +44,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="1 - Domain\Attendee.cs" />
     <Compile Include="1 - Domain\Booking.cs" />
     <Compile Include="1 - Domain\IAggregateRoot.cs" />
     <Compile Include="1 - Domain\ValueTypes\Money.cs" />
+    <Compile Include="Housekeeping\Commands\SaveBookingCommand.cs" />
+    <Compile Include="Housekeeping\Feature\Bookings\BookAThing.cs" />
+    <Compile Include="Housekeeping\Feature\Bookings\ListBookingsByDateRequest.cs" />
+    <Compile Include="Housekeeping\ICommand.cs" />
+    <Compile Include="Housekeeping\IQuery.cs" />
+    <Compile Include="Housekeeping\Queries\BookingsByDateQuery.cs" />
+    <Compile Include="Housekeeping\Requests\ListAttendees.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="1 - Domain\IntroducingDDD.txt" />
+    <Content Include="Housekeeping\EnforcingHousekeepingRules.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

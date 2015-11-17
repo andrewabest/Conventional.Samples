@@ -1,0 +1,5 @@
+﻿When we want to contribute some code to an existing codebase, we should do so in a way that aligns with the codebases existing conventions.
+
+Nothing makes navigating anything beyond trivial codebases harder than poor organisation, imposing a large cognitive overhead and makes contributing code an exercise in guesswork and frustration.
+
+Let's take a look at how our codebase can enforce it's own housekeeping rules to ensure new contributors can get up to speed easily and extend the codebase with minimal brainpower expended on trivialities like where to put X or what to name Y.

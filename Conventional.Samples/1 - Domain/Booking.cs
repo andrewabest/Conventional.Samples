@@ -7,6 +7,7 @@ namespace Conventional.Samples.Domain
     {
         protected Booking()
         {
+            Cost = Money.Empty();
         }
 
         protected Booking(Guid id, Money cost)
@@ -20,11 +21,11 @@ namespace Conventional.Samples.Domain
             return new Booking(id, Money.Create(cost));
         }
 
-        public Guid Id { get; private set; }
+        public Guid Id { get; }
 
-        public Money Cost { get; private set; }
+        public Money Cost { get; }
 
-        public string Description { get; set; }
+        public string Description { get; private set; }
 
         public void SetDescription(string description)
         {
