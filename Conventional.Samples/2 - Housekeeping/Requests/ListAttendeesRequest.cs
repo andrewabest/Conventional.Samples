@@ -3,7 +3,7 @@ using MediatR;
 
 namespace Conventional.Samples.Housekeeping.Requests
 {
-    public class ListAttendees : IRequest<Attendee>
+    public class ListAttendeesRequest : IRequest<Attendee[]>
     {
     }
 }

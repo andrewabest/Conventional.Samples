@@ -1,0 +1,5 @@
+﻿The more responsibilities a codebase piles onto a developer to enforce, the larger the chance is of something going wrong. Murphy's law holds true, and the more complex the codebase, the more often it will bite.
+
+We should be mitigating the risk of run-time exceptions as much as possible up front. We want to be able to guarantee as much of our code as possible is well formed and functional before running the software.
+
+Let's build our own safety nets for when the compiler won't save us!

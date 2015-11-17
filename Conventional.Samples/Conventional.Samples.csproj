@@ -50,20 +50,26 @@
     <Compile Include="1 - Domain\ValueTypes\Money.cs" />
     <Compile Include="2 - Housekeeping\Commands\SaveBookingCommand.cs" />
     <Compile Include="2 - Housekeeping\Feature\Bookings\BookAThing.cs" />
-    <Compile Include="2 - Housekeeping\Feature\Bookings\ListBookingsByDateRequest.cs" />
     <Compile Include="2 - Housekeeping\ICommand.cs" />
     <Compile Include="2 - Housekeeping\IQuery.cs" />
     <Compile Include="2 - Housekeeping\Queries\BookingsByDateQuery.cs" />
-    <Compile Include="2 - Housekeeping\Requests\ListAttendees.cs" />
+    <Compile Include="2 - Housekeeping\Requests\ListAttendeesRequest.cs" />
+    <Compile Include="2 - Housekeeping\Requests\ListBookingsByDateRequest.cs" />
+    <Compile Include="3 - Humans\Dtos\BookingInformationDto.cs" />
+    <Compile Include="3 - Humans\Handlers\ListAttendeesRequestHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="1 - Domain\IntroducingDDD.txt" />
     <Content Include="2 - Housekeeping\EnforcingHousekeepingRules.txt" />
+    <Content Include="3 - Humans\Migrations\201511171310_Create_Attendees_Table.sql" />
+    <Content Include="3 - Humans\ProtectingTheHumans.txt" />
+    <EmbeddedResource Include="3 - Humans\Migrations\201511171140_Create_Bookings_Table.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Conventional.Samples.Domain;
 using Conventional.Samples.Housekeeping.Commands;
+using Conventional.Samples.Housekeeping.Requests;
 using MediatR;
 
 namespace Conventional.Samples.Housekeeping.Feature.Bookings

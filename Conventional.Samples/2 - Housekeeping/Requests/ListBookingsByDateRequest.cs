@@ -1,8 +1,8 @@
-﻿using System;
+using System;
 using Conventional.Samples.Domain;
 using MediatR;
 
-namespace Conventional.Samples.Housekeeping.Feature.Bookings
+namespace Conventional.Samples.Housekeeping.Requests
 {
     public class ListBookingsByDateRequest : IRequest<Booking[]>
     {

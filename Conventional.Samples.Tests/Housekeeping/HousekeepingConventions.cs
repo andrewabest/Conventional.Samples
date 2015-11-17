@@ -1,4 +1,5 @@
 ﻿using Conventional.Samples.Housekeeping.Feature.Bookings;
+using Conventional.Samples.Housekeeping.Requests;
 using Conventional.Samples.Tests.Extensions;
 using MediatR;
 using NUnit.Framework;
