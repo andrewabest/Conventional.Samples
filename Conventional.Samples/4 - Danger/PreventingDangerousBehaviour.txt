@@ -1,0 +1,3 @@
+﻿When building systems, we often employ tools that when held the wrong way, pose danger to ourselves and to other denizens of our codebase. 
+
+Let's see how we can put some rubber corners on these tools to ensure all contributors to our software are safe from cutting themselves on sharp edges.

@@ -8,17 +8,14 @@ namespace Conventional.Samples.Humans.Dtos
         {
         }
 
-        public static BookingInformationDto Create(Guid id, string description)
+        public BookingInformationDto(Guid id, string description)
         {
-            return new BookingInformationDto()
-            {
-                Id = id,
-                Description = description
-            };
+            Id = id;
+            Description = description;
         }
 
 
-        public Guid Id { get; private set; }
-        public string Description { get; private set; }
+        public Guid Id { get; set; }
+        public string Description { get; set; }
     }
 }

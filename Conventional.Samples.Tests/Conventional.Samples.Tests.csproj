@@ -68,6 +68,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Danger\ConventionsToPreventDangerousBehaviour.cs" />
     <Compile Include="Domain\DomainConventions.cs" />
     <Compile Include="Extensions\TypeExtensions.cs" />
     <Compile Include="Housekeeping\HousekeepingConventions.cs" />
