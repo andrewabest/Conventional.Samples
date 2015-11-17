@@ -1,0 +1,7 @@
+﻿For newcomers to domain driven design, enforcing it's practices can be a non-trivial exercise. There are enough concerns in play that if it were left to a developer to run through a mental checklist each time they wanted to construct an aggregate or entity, things would fal through the cracks. 
+
+However without adhering strictly to certain principals, a lot of the benefit of DDD can be lost.
+
+So what can we do?
+
+We can inspect the types that make up our domain model, and enforce the rules we want members of our domain to conform to.
