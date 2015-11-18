@@ -10,17 +10,19 @@ namespace Conventional.Samples.Housekeeping.Feature.Bookings
     public class BookAThing
     {
         private readonly IMediator _mediator;
+        private readonly Func<DateTime> _dateTimeFactory;
 
-        public BookAThing(IMediator mediator)
+        public BookAThing(IMediator mediator, Func<DateTime> dateTimeFactory)
         {
             _mediator = mediator;
+            _dateTimeFactory = dateTimeFactory;
         }
 
         public List<Booking> Bookings { get; } = new List<Booking>();
 
         public void Initialize()
         {
-            Bookings.AddRange(_mediator.Send(new ListBookingsByDateRequest(DateTime.Now)));
+            Bookings.AddRange(_mediator.Send(new ListBookingsByDateRequest(_dateTimeFactory())));
         }
 
         public void DoMyThing()

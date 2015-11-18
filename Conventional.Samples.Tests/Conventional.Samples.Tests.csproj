@@ -84,6 +84,7 @@
     <Compile Include="Legacy\Conventions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SetUpFixture.cs" />
+    <Compile Include="Training\TrainingConventions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

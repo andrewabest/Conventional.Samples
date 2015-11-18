@@ -1,0 +1,3 @@
+﻿Sometimes we want to adopt new technology into our stack, but doing so requires that our team internalise a new set of technology-specific rules.
+
+.NET Framework 4.5's introduction of async / await is a great example of a technology that has some sharp edges that, unless you know about them, are not so apparent. Let's see how we can help train our developers to build an awareness of the sharp edges that exist.

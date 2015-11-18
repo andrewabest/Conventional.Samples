@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Conventional.Samples.Housekeeping;
 using Conventional.Samples.Humans.Dtos;
@@ -7,22 +8,22 @@ namespace Conventional.Samples.Danger.Queries
 {
     public class AttendeesQuery : IQuery
     {
-        private readonly DbContext _context;
+        private readonly Func<DbContext> _contextFactory;
 
-        public AttendeesQuery(DbContext context)
+        public AttendeesQuery(Func<DbContext> contextFactory)
         {
-            _context = context;
+            _contextFactory = contextFactory;
         }
 
         public IEnumerable<AttendeeInformationDto> Execute()
         {
             return
 
-                _context.Attendees.Select(
+                _contextFactory().Attendees.Select(
                     x =>
                         new AttendeeInformationDto
                         {
-                            Bookings = x.Bookings.Select(b => new BookingInformationDto(b.Id, b.Description))
+                            Bookings = x.Bookings.Select(b => new BookingInformationDto(b.Id, b.Description)).ToArray()
                         });
         } 
     }
