@@ -61,6 +61,7 @@
     <Compile Include="3 - Humans\Handlers\ListAttendeesRequestHandler.cs" />
     <Compile Include="4 - Danger\DbContext.cs" />
     <Compile Include="4 - Danger\Queries\AttendeesQuery.cs" />
+    <Compile Include="7 - Opinions\BookingAlgorithm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="6 - Training\BookingProcessor.cs" />
     <Compile Include="6 - Training\External\BookingClient.cs" />

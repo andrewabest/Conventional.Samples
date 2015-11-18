@@ -17,9 +17,9 @@ namespace Conventional.Samples.Training.External
             _mediator = mediator;
         }
 
-        public async Task<Booking[]> GetBookings(DateTime bookingDate)
+        public async Task<Booking[]> GetBookingsAsync(DateTime bookingDate)
         {
-            return await _mediator.SendAsync(new ListBookingsByDateRequestAsync(bookingDate));
+            return await _mediator.SendAsync(new ListBookingsByDateRequestAsync(bookingDate)).ConfigureAwait(false);
         } 
     }
 }

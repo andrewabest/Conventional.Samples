@@ -30,9 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Conventional, Version=1.1.0.100, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Conventional, Version=1.1.0.102, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Best.Conventional.1.1.0.100\lib\net45\Conventional.dll</HintPath>
+      <HintPath>..\packages\Best.Conventional.1.1.0.102\lib\net45\Conventional.dll</HintPath>
     </Reference>
     <Reference Include="FluentAssertions, Version=4.0.1.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
       <HintPath>..\packages\FluentAssertions.4.0.1\lib\net45\FluentAssertions.dll</HintPath>
@@ -82,6 +82,7 @@
     <Compile Include="Housekeeping\HousekeepingConventions.cs" />
     <Compile Include="Humans\ConventionsToProtectHumans.cs" />
     <Compile Include="Legacy\Conventions.cs" />
+    <Compile Include="Opinions\OpinionConventions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SetUpFixture.cs" />
     <Compile Include="Training\TrainingConventions.cs" />
