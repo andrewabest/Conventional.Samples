@@ -16,7 +16,7 @@ namespace Conventional.Samples.Training
                 content = await result.Content.ReadAsStringAsync();
             }
 
-            // Do things with content!
+            // Todo: Do things with content!
         }
     }
 }
