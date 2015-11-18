@@ -9,6 +9,7 @@ namespace Conventional.Samples.Tests
         public void Setup()
         {
             ConventionConfiguration.DefaultFailureAssertionCallback = Assert.Fail;
+            ConventionConfiguration.DefaultWarningAssertionCallback = Assert.Inconclusive;
         }
     }
 }

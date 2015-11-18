@@ -1,0 +1,5 @@
+﻿“Code without tests is bad code. It doesn't matter how well written it is; it doesn't matter how pretty or object-oriented or well-encapsulated it is. With tests, we can change the behavior of our code quickly and verifiably. Without them, we really don't know if our code is getting better or worse.” 
+
+― Michael C. Feathers, Working Effectively with Legacy Code
+
+Testable code is extensible, maintainable, malleable code. Most of us strive to ensure that the code we write is clean, modular and can be (and is!) easily tested. But what about when we encounter a codebase that may not have been designed with such good intentions? What can we do to identify the bad practices within it, and look to pay them down, and improve it over time?

@@ -67,6 +67,7 @@
     <Content Include="1 - Domain\IntroducingDDD.txt" />
     <Content Include="2 - Housekeeping\EnforcingHousekeepingRules.txt" />
     <Content Include="4 - Danger\PreventingDangerousBehaviour.txt" />
+    <Content Include="5 - Legacy\ImprovingLegacyCode.txt" />
     <EmbeddedResource Include="3 - Humans\Migrations\201511171310_Create_Attendees_Table.sql" />
     <Content Include="3 - Humans\ProtectingTheHumans.txt" />
     <EmbeddedResource Include="3 - Humans\Migrations\201511171140_Create_Bookings_Table.sql" />
