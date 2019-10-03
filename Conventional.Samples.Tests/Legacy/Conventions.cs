@@ -10,8 +10,10 @@ namespace Conventional.Samples.Tests.Legacy
         [Test]
         public void MustNotUseDateTimeDirectly()
         {
-            typeof (DbContext).Assembly.GetExportedTypes()
-                .MustConformTo(Convention.MustNotResolveCurrentTimeViaDateTime);
+            typeof(DbContext).Assembly.GetExportedTypes()
+                .MustConformTo(Convention.MustNotResolveCurrentTimeViaDateTime)
+                .WithFailureAssertion(Assert.Fail);
+                
         }
 
         readonly DateTime _doomsday = new DateTime(2015, 12, 2);
@@ -19,7 +21,11 @@ namespace Conventional.Samples.Tests.Legacy
         [Test]
         public void MustNotUseDateTimeDirectly_Alternative()
         {
-            typeof (DbContext).Assembly.GetExportedTypes()
+            // note: doomsday tests require warning and failure assertions to be set up globally
+            ConventionConfiguration.DefaultFailureAssertionCallback = Assert.Fail;
+            ConventionConfiguration.DefaultWarningAssertionCallback = Assert.Inconclusive;
+
+            typeof(DbContext).Assembly.GetExportedTypes()
                 .WithKnownOffenders(1)
                 .ByDoomsday(_doomsday)
                 .WithWarningWithin(TimeSpan.FromDays(14))
