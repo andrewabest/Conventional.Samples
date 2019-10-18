@@ -19,8 +19,8 @@ namespace Conventional.Samples.Domain
             return new Attendee(id);
         }
 
-        public Guid Id { get; }
+        public Guid Id { get; private set; }
 
-        public IEnumerable<Booking> Bookings { get; } = new List<Booking>();
+        public IEnumerable<Booking> Bookings { get; private set; } = new List<Booking>();
     }
 }

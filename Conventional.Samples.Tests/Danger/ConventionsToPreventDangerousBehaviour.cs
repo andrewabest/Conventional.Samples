@@ -12,7 +12,7 @@ namespace Conventional.Samples.Tests.Danger
         {
             typeof (AttendeeInformationDto).Assembly.GetExportedTypes()
                 .Where(x => x.Namespace != null && x.Namespace.EndsWith(".Dtos"))
-                .MustConformTo(Convention.EnumerablePropertiesMustBeEagerLoadedConventionSpecification);
+                .MustConformTo(Convention.EnumerablePropertiesMustBeEagerLoaded);
         }
 
         [Test]
