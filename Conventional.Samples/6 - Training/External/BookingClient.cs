@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using Conventional.Samples.Domain;
 using Conventional.Samples.Housekeeping.Requests;
 using Conventional.Samples.Humans.Dtos;
-using Conventional.Samples.Training.Requests;
 using MediatR;
 
 namespace Conventional.Samples.Training.External
@@ -19,7 +18,7 @@ namespace Conventional.Samples.Training.External
 
         public async Task<Booking[]> GetBookingsAsync(DateTime bookingDate)
         {
-            return await _mediator.SendAsync(new ListBookingsByDateRequestAsync(bookingDate)).ConfigureAwait(false);
+            return await _mediator.Send(new ListBookingsByDateRequest(bookingDate)).ConfigureAwait(false);
         } 
     }
 }

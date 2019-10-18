@@ -1,4 +1,6 @@
 using System;
+using System.Threading;
+using System.Threading.Tasks;
 using Conventional.Samples.Domain;
 using Conventional.Samples.Housekeeping.Requests;
 using MediatR;
@@ -7,9 +9,9 @@ namespace Conventional.Samples.Humans.Handlers
 {
     public class ListAttendeesRequestHandler : IRequestHandler<ListAttendeesRequest, Attendee[]>
     {
-        public Attendee[] Handle(ListAttendeesRequest message)
+        public Task<Attendee[]> Handle(ListAttendeesRequest request, CancellationToken cancellationToken)
         {
-            return new Attendee[0];
+            return Task.FromResult(Array.Empty<Attendee>());
         }
     }
 }

@@ -1,91 +1,21 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{91F36033-4BED-4058-A372-63D49101E753}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Conventional.Samples</RootNamespace>
-    <AssemblyName>Conventional.Samples</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
+    <TargetFramework>netcoreapp3.0</TargetFramework>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="MediatR, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MediatR.2.0.2\lib\net45\MediatR.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
+    <None Remove="3 - Humans\Migrations\201511171140_Create_Bookings_Table.sql" />
+    <None Remove="3 - Humans\Migrations\201511171310_Create_Attendees_Table.sql" />
   </ItemGroup>
+
   <ItemGroup>
-    <Compile Include="1 - Domain\Attendee.cs" />
-    <Compile Include="1 - Domain\Booking.cs" />
-    <Compile Include="1 - Domain\IAggregateRoot.cs" />
-    <Compile Include="1 - Domain\ValueTypes\Money.cs" />
-    <Compile Include="2 - Housekeeping\Commands\SaveBookingCommand.cs" />
-    <Compile Include="2 - Housekeeping\Feature\Bookings\BookAThing.cs" />
-    <Compile Include="2 - Housekeeping\ICommand.cs" />
-    <Compile Include="2 - Housekeeping\IQuery.cs" />
-    <Compile Include="2 - Housekeeping\Queries\BookingsByDateQuery.cs" />
-    <Compile Include="2 - Housekeeping\Requests\ListAttendeesRequest.cs" />
-    <Compile Include="2 - Housekeeping\Requests\ListBookingsByDateRequest.cs" />
-    <Compile Include="3 - Humans\Handlers\ListBookingsByDateRequestHandler.cs" />
-    <Compile Include="4 - Danger\Dtos\AttendeeInformationDto.cs" />
-    <Compile Include="3 - Humans\Dtos\BookingInformationDto.cs" />
-    <Compile Include="3 - Humans\Handlers\ListAttendeesRequestHandler.cs" />
-    <Compile Include="4 - Danger\DbContext.cs" />
-    <Compile Include="4 - Danger\Queries\AttendeesQuery.cs" />
-    <Compile Include="7 - Opinions\BookingAlgorithm.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="6 - Training\BookingProcessor.cs" />
-    <Compile Include="6 - Training\External\BookingClient.cs" />
-    <Compile Include="6 - Training\Requests\ListBookingsByDateRequestAsync.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="1 - Domain\IntroducingDDD.txt" />
-    <Content Include="2 - Housekeeping\EnforcingHousekeepingRules.txt" />
-    <Content Include="4 - Danger\PreventingDangerousBehaviour.txt" />
-    <Content Include="5 - Legacy\ImprovingLegacyCode.txt" />
-    <Content Include="6 - Training\DeveloperTraining.txt" />
-    <EmbeddedResource Include="3 - Humans\Migrations\201511171310_Create_Attendees_Table.sql" />
-    <Content Include="3 - Humans\ProtectingTheHumans.txt" />
     <EmbeddedResource Include="3 - Humans\Migrations\201511171140_Create_Bookings_Table.sql" />
+    <EmbeddedResource Include="3 - Humans\Migrations\201511171310_Create_Attendees_Table.sql" />
   </ItemGroup>
+
   <ItemGroup>
-    <None Include="packages.config" />
+    <PackageReference Include="Mediatr" Version="7.0.0" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+
 </Project>

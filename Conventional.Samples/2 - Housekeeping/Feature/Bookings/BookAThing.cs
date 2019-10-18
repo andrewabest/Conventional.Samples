@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Conventional.Samples.Domain;
 using Conventional.Samples.Housekeeping.Commands;
 using Conventional.Samples.Housekeeping.Requests;
@@ -20,9 +21,9 @@ namespace Conventional.Samples.Housekeeping.Feature.Bookings
 
         public List<Booking> Bookings { get; } = new List<Booking>();
 
-        public void Initialize()
+        public async Task InitializeAsync()
         {
-            Bookings.AddRange(_mediator.Send(new ListBookingsByDateRequest(_dateTimeFactory())));
+            Bookings.AddRange(await _mediator.Send(new ListBookingsByDateRequest(_dateTimeFactory())));
         }
 
         public void DoMyThing()
