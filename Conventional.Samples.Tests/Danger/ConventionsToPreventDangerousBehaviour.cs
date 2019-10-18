@@ -12,7 +12,8 @@ namespace Conventional.Samples.Tests.Danger
         {
             typeof (AttendeeInformationDto).Assembly.GetExportedTypes()
                 .Where(x => x.Namespace != null && x.Namespace.EndsWith(".Dtos"))
-                .MustConformTo(Convention.EnumerablePropertiesMustBeEagerLoaded);
+                .MustConformTo(Convention.EnumerablePropertiesMustBeEagerLoaded)
+                .WithFailureAssertion(Assert.Fail);
         }
 
         [Test]
@@ -20,7 +21,8 @@ namespace Conventional.Samples.Tests.Danger
         {
             typeof (DbContext).Assembly.GetExportedTypes()
                 .MustConformTo(Convention.MustNotTakeADependencyOn(typeof (DbContext),
-                    "Because multithreading, transaction boundaries, testability etc."));
+                    "Because multithreading, transaction boundaries, testability etc."))
+                .WithFailureAssertion(Assert.Fail);
         }
     }
 }

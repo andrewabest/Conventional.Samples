@@ -7,7 +7,8 @@ namespace Conventional.Samples.Tests.Opinions
         [Test]
         public void ClassesMustOnlyContainToDoOrNoteComments()
         {
-            ThisSolution.MustConformTo(Convention.MustOnlyContainToDoAndNoteComments);
+            ThisSolution.MustConformTo(Convention.MustOnlyContainToDoAndNoteComments)
+                .WithFailureAssertion(Assert.Fail);
         } 
     }
 }

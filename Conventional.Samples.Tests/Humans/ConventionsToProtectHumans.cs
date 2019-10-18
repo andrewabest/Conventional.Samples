@@ -22,13 +22,16 @@ namespace Conventional.Samples.Tests.Humans
 
             typeof (ListAttendeesRequest).Assembly
                 .GetAllTypesImplementingOpenGenericType(typeof (IRequest<>))
-                .MustConformTo(Convention.RequiresACorrespondingImplementationOf(typeof (IRequestHandler<,>), handlers));
+                .MustConformTo(Convention.RequiresACorrespondingImplementationOf(typeof (IRequestHandler<,>), handlers))
+                .WithFailureAssertion(Assert.Fail);
         }
 
         [Test]
         public void MigrationScriptsMustBeEmbedded()
         {
-            typeof (Booking).Assembly.MustConformTo(Convention.MustHaveFilesBeEmbeddedResources(".sql"));
+            typeof (Booking).Assembly
+                .MustConformTo(Convention.MustHaveFilesBeEmbeddedResources(".sql"))
+                .WithFailureAssertion(Assert.Fail);
         }
 
         [Test]
@@ -36,13 +39,16 @@ namespace Conventional.Samples.Tests.Humans
         {
             typeof (BookingInformationDto).MustConformTo(
                 Convention.MustHaveAppropriateConstructors.And(
-                Convention.PropertiesMustHavePublicSetters));
+                Convention.PropertiesMustHavePublicSetters))
+                .WithFailureAssertion(Assert.Fail);
         }
 
         [Test]
         public void ReferencedAssembliesMustNotLiveInBinOrObjFolders()
         {
-            typeof(Booking).Assembly.MustConformTo(Convention.MustNotReferenceDllsFromBinOrObjDirectories);
+            typeof(Booking).Assembly
+                .MustConformTo(Convention.MustNotReferenceDllsFromBinOrObjDirectories)
+                .WithFailureAssertion(Assert.Fail);
         }
     }
 }

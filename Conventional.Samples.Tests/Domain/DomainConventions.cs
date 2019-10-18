@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using Conventional.Samples.Domain;
 using NUnit.Framework;
@@ -12,21 +11,24 @@ namespace Conventional.Samples.Tests.Domain
         public void AggregatePropertiesMustHavePrivateSetters()
         {
             AggregateRoots()
-                .MustConformTo(Convention.PropertiesMustHavePrivateSetters);
+                .MustConformTo(Convention.PropertiesMustHavePrivateSetters)
+                .WithFailureAssertion(Assert.Fail); 
         }
 
         [Test]
         public void MustInstantiateValueTypesInDefaultConstructor()
         {
             AggregateRoots()
-                .MustConformTo(Convention.MustInstantiatePropertiesOfSpecifiedTypeInDefaultConstructor(ValueTypes()));
+                .MustConformTo(Convention.MustInstantiatePropertiesOfSpecifiedTypeInDefaultConstructor(ValueTypes()))
+                .WithFailureAssertion(Assert.Fail);
         }
 
         [Test]
         public void MustHaveNonPublicDefaultConstructor()
         {
             AggregateRoots()
-                .MustConformTo(Convention.MustHaveANonPublicDefaultConstructor);
+                .MustConformTo(Convention.MustHaveANonPublicDefaultConstructor)
+                .WithFailureAssertion(Assert.Fail);
         }
 
         private Type[] AggregateRoots()

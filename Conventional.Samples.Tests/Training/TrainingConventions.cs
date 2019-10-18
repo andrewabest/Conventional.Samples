@@ -1,7 +1,5 @@
-﻿using System.Linq;
-using Conventional.Samples.Training;
+﻿using Conventional.Samples.Training;
 using NUnit.Framework;
-using Conventional.Extensions;
 using Conventional.Samples.Training.External;
 
 namespace Conventional.Samples.Tests.Training
@@ -12,21 +10,24 @@ namespace Conventional.Samples.Tests.Training
         public void AsyncMethodsMustNotBeVoid()
         {
             typeof (BookingProcessor).Assembly.ExportedTypes
-                .MustConformTo(Convention.VoidMethodsMustNotBeAsync);
+                .MustConformTo(Convention.VoidMethodsMustNotBeAsync)
+                .WithFailureAssertion(Assert.Fail);
         }
 
         [Test]
         public void AsyncMethodsNamesMustEndInAsync()
         {
             typeof(BookingProcessor).Assembly.ExportedTypes
-                .MustConformTo(Convention.AsyncMethodsMustHaveAsyncSuffix);
+                .MustConformTo(Convention.AsyncMethodsMustHaveAsyncSuffix)
+                .WithFailureAssertion(Assert.Fail);
         }
 
         [Test]
         public void AsyncLibrariesMustCallConfigureAwaitFalse()
         {
             typeof (BookingClient)
-                .MustConformTo(Convention.LibraryCodeShouldCallConfigureAwaitWhenAwaitingTasks);
+                .MustConformTo(Convention.LibraryCodeShouldCallConfigureAwaitWhenAwaitingTasks)
+                .WithFailureAssertion(Assert.Fail);
         }
     }
 }
