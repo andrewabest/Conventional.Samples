@@ -21,9 +21,9 @@ namespace Conventional.Samples.Domain
             return new Booking(id, Money.Create(cost));
         }
 
-        public Guid Id { get; }
+        public Guid Id { get; private set; }
 
-        public Money Cost { get; }
+        public Money Cost { get; private set; }
 
         public string Description { get; private set; }
 
